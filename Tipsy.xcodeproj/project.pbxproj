@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C71A9BE260F20A400ACD77D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C71A9BD260F20A400ACD77D /* ResultsViewController.swift */; };
+		0C71A9BE260F20A400ACD77D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C71A9BD260F20A400ACD77D /* ResultViewController.swift */; };
 		0C71A9C1260F32B000ACD77D /* TipsyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C71A9C0260F32B000ACD77D /* TipsyBrain.swift */; };
 		ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689522326708D006D4E2B /* AppDelegate.swift */; };
 		ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689542326708D006D4E2B /* SceneDelegate.swift */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C71A9BD260F20A400ACD77D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		0C71A9BD260F20A400ACD77D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		0C71A9C0260F32B000ACD77D /* TipsyBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsyBrain.swift; sourceTree = "<group>"; };
 		ADB6894F2326708D006D4E2B /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB689522326708D006D4E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB689562326708D006D4E2B /* CalculatorViewController.swift */,
-				0C71A9BD260F20A400ACD77D /* ResultsViewController.swift */,
+				0C71A9BD260F20A400ACD77D /* ResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 				ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */,
 				0C71A9C1260F32B000ACD77D /* TipsyBrain.swift in Sources */,
 				ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */,
-				0C71A9BE260F20A400ACD77D /* ResultsViewController.swift in Sources */,
+				0C71A9BE260F20A400ACD77D /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

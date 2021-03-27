@@ -11,7 +11,10 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     var selectedButton: UIButton?
-    var pctValue: Float = -1.0
+    var bill: Float = 0
+    var tipPct: Float = 0.1
+    var numberOfPeople: Float = 2
+    var amountToPay: Float = 0.0
 
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var zeroPctButton: UIButton!
@@ -28,14 +31,34 @@ class CalculatorViewController: UIViewController {
     @IBAction func tipChanged(_ sender: UIButton) {
         setSelectedButton(pressedButton: sender.self)
         setPctValue(pressedButton: sender.self)
+        billTextField.endEditing(true)
+        
+        if let safeBillText = Float(billTextField.text!) {
+            bill = safeBillText
+        }
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         splitNumberLabel.text = String(Int(sender.value))
+        numberOfPeople = Float(sender.value)
+        billTextField.endEditing(true)
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        print(pctValue)
+        let tip = bill * tipPct
+        let totalBill = bill + tip
+        amountToPay = totalBill / numberOfPeople
+        
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.amountToPay = String(format: "%.2f", amountToPay)
+            destinationVC.numberOfPeople = String(format: "%.0f", numberOfPeople)
+            destinationVC.tipPst = selectedButton?.currentTitle
+        }
     }
     
     func setSelectedButton(pressedButton: UIButton) {
@@ -52,13 +75,13 @@ class CalculatorViewController: UIViewController {
     
     func setPctValue(pressedButton: UIButton) {
         if pressedButton == zeroPctButton {
-            pctValue = 0.0
+            tipPct = 0.0
         } else if pressedButton == tenPctButton {
-            pctValue = 0.1
+            tipPct = 0.1
         } else if pressedButton == twentyPctButton {
-            pctValue = 0.2
+            tipPct = 0.2
         } else {
-            pctValue = -1.0
+            tipPct = -1.0
         }
     }
 
